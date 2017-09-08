@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="BreakTime" representedClassName="BreakTime" syncable="YES" codeGenerationType="class">
+        <attribute name="breakTime" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dayCycle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayCycle" inverseName="breakTimes" inverseEntity="DayCycle" syncable="YES"/>
+    </entity>
+    <entity name="DayCycle" representedClassName="DayCycle" syncable="YES" codeGenerationType="class">
+        <attribute name="clockInDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="clockOutDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="endLunchDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="leaveDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="startLunchDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="breakTimes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BreakTime" inverseName="dayCycle" inverseEntity="BreakTime" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="dayCycle" inverseEntity="Location" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationSubtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationUUID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="dayCycle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayCycle" inverseName="location" inverseEntity="DayCycle" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BreakTime" positionX="-45" positionY="63" width="128" height="75"/>
+        <element name="DayCycle" positionX="-54" positionY="9" width="128" height="150"/>
+        <element name="Location" positionX="-18" positionY="90" width="128" height="135"/>
+    </elements>
+</model>
